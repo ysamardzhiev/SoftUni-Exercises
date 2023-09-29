@@ -1,3 +1,3 @@
 # SoftUni-Exercises
 
-These are my exercises from the SoftUni Courses
+These are my exercises from the SoftUni courses
