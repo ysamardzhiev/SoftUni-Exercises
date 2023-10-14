@@ -7,4 +7,4 @@ In this repository, there are solutions to tasks from the programming courses of
 ## Table of Contents:
 ➡ [Programming Basics with Python](https://github.com/ysamardzhiev/SoftUni-Exercises/tree/main/Programming_Basics_Python)
 
-➡ [Programming Fundamentals with Python](https://github.com/ysamardzhiev/SoftUni-Exercises/tree/main/Programming_Fundamentals_Python/homeworks_and_labs)
+➡ [Programming Fundamentals with Python](https://github.com/ysamardzhiev/SoftUni-Exercises/tree/main/Programming_Fundamentals_Python)
