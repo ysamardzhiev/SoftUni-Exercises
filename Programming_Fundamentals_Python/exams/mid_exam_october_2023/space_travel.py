@@ -23,7 +23,7 @@ for command in travel_route:
             print(f"An enemy with {enemy_armor} armour is defeated.")
         else:
             if total_fuel > enemy_armor:
-                total_fuel -= 2 * enemy_armor  # Not sure
+                total_fuel -= 2 * enemy_armor
                 print(f"An enemy with {enemy_armor} armour is outmaneuvered.")
             else:
                 print("Mission failed.")
