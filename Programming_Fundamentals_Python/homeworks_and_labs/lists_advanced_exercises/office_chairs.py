@@ -1,16 +1,18 @@
-number_of_rooms = int(input())
+def rooms_check(rooms_count: int) -> int:
+    free_chairs_counter = 0
 
-total_free_chairs = 0
-total_needed_chairs = 0
-for room in range(1, number_of_rooms + 1):
-    chairs_and_visitors = input().split()
-    chairs_count = chairs_and_visitors[0].count('X')
-    visitors_count = int(chairs_and_visitors[1])
-    if chairs_count < visitors_count:
-        needed_chairs = visitors_count - chairs_count
-        total_needed_chairs += needed_chairs
-        print(f'{needed_chairs} more chairs needed in room {room}')
-    else:
-        total_free_chairs += chairs_count - visitors_count
-if total_free_chairs >= total_needed_chairs:
-    print(f"Game On, {total_free_chairs} free chairs left")
+    for room in range(1, rooms_count + 1):
+        chair_and_visitors_count = input().split()
+        chairs = len(chair_and_visitors_count[0])
+        visitors = int(chair_and_visitors_count[1])
+        free_chairs_counter += chairs - visitors
+
+        if visitors > chairs:
+            print(f'{visitors - chairs} more chairs needed in room {room}')
+    return free_chairs_counter
+
+
+number_of_rooms = int(input())
+total_free_chairs = rooms_check(number_of_rooms)
+if total_free_chairs >= 0:
+    print(f'Game On, {total_free_chairs} free chairs left')
