@@ -6,7 +6,6 @@ def rooms_check(rooms_count: int) -> int:
         chairs = len(chair_and_visitors_count[0])
         visitors = int(chair_and_visitors_count[1])
         free_chairs_counter += chairs - visitors
-
         if visitors > chairs:
             print(f'{visitors - chairs} more chairs needed in room {room}')
     return free_chairs_counter
