@@ -11,14 +11,15 @@ while elements and command != 'end':
         middle_index = len(elements) // 2
         elements.insert(middle_index, f"-{moves_counter}a"), elements.insert(middle_index, f"-{moves_counter}a")
         print("Invalid input! Adding additional elements to the board")
-    elif elements[index1] == elements[index2]:
-        print(f"Congrats! You have found matching elements - {elements[index1]}!")
-        if index1 > index2:
-            elements.pop(index1), elements.pop(index2)
+    else:
+        if elements[index1] == elements[index2]:
+            print(f"Congrats! You have found matching elements - {elements[index1]}!")
+            if index1 > index2:
+                elements.pop(index1), elements.pop(index2)
+            else:
+                elements.pop(index2), elements.pop(index1)
         else:
-            elements.pop(index2), elements.pop(index1)
-    elif elements[index1] != elements[index2]:
-        print("Try again!")
+            print("Try again!")
     command = input()
 if elements:
     print(f"Sorry you lose :(\n{' '.join(elements)}")
