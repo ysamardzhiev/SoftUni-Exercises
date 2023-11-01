@@ -24,10 +24,12 @@ def main():
 
 
 def action_potion(health, heal):
-    heal_amount = 100 - health
+    current_health = health
     health = min(health + heal, 100)
     if health < 100:
         heal_amount = heal
+    else:
+        heal_amount = health - current_health
     print(f"You healed for {heal_amount} hp.")
     print(f"Current health: {health} hp.")
     return health
