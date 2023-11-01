@@ -33,10 +33,10 @@ def action_potion(health, heal):
     return health
 
 
-def action_chest(current_bitcoin, bitcoins):
-    current_bitcoin += bitcoins
+def action_chest(current_bitcoins, bitcoins):
+    current_bitcoins += bitcoins
     print(f"You found {bitcoins} bitcoins.")
-    return current_bitcoin
+    return current_bitcoins
 
 
 def action_fight(health, attack, monster, room):
