@@ -16,9 +16,9 @@ emails = []
 
 command = input()
 while command != 'Stop':
-    commands = command.split()
-    some_info = Email(commands[0], commands[1], commands[2])
-    emails.append(some_info)
+    sender, receiver, content = command.split()
+    email_info = Email(sender, receiver, content)
+    emails.append(email_info)
     command = input()
 
 sent_emails = [int(s) for s in input().split(', ')]
