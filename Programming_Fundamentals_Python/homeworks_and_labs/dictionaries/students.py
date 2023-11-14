@@ -13,7 +13,7 @@ while ':' in data:
     students_count += 1
     data = input()
 
-data = data.replace('_', ' ')
+searched_course = data.replace('_', ' ')
 for current_student in range(1, students_count):
-    if data in students_information[current_student].values():
+    if searched_course in students_information[current_student].values():
         print(f'{students_information[current_student]["name"]} - {students_information[current_student]["ID"]}')
