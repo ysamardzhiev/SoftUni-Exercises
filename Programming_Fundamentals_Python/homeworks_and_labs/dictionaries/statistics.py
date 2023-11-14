@@ -2,9 +2,7 @@ stock = {}
 
 command = input()
 while command != 'statistics':
-    data = command.split(': ')
-    product = data[0]
-    quantity = data[1]
+    product, quantity = command.split(': ')
     if product in stock:
         stock[product] += int(quantity)
     else:
