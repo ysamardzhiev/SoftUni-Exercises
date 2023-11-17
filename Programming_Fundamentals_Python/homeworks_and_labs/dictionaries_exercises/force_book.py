@@ -1,41 +1,27 @@
 force_book = {}
 
-user_is_not_added = False
-
 command = input()
 while command != 'Lumpawaroo':
+    user_is_added = False
     if '|' in command:
-        data = command.split(' | ')
-        force_side = data[0]
-        force_user = data[1]
-        if force_side not in force_book.keys():
-            force_book[force_side] = []
+        force_side, force_user = command.split(' | ')
         for users in force_book.values():
-            if force_user not in users:
-                user_is_not_added = True
-            else:
-                user_is_not_added = False
+            if force_user in users:
+                user_is_added = True
                 break
-        if user_is_not_added:
+        if not user_is_added:
+            if force_side not in force_book.keys():
+                force_book[force_side] = []
             force_book[force_side].append(force_user)
     else:
-        data = command.split(' -> ')
-        force_user = data[0]
-        force_side = data[1]
-        if force_side not in force_book.keys():
-            force_book[force_side] = []
-
+        force_user, force_side = command.split(' -> ')
         for users in force_book.values():
-            if force_user not in users:
-                user_is_not_added = True
-            else:
-                user_is_not_added = False
+            if force_user in users:
                 users.remove(force_user)
                 break
-        if user_is_not_added:
-            force_book[force_side].append(force_user)
-        else:
-            force_book[force_side].append(force_user)
+        if force_side not in force_book.keys():
+            force_book[force_side] = []
+        force_book[force_side].append(force_user)
         print(f'{force_user} joins the {force_side} side!')
     command = input()
 
