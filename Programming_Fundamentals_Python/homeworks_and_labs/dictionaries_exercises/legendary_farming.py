@@ -1,9 +1,9 @@
 materials = {'shards': 0, 'fragments': 0, 'motes': 0}
-win_indicator = 250
+item_value = 250
 obtained_item = ''
 item_already_obtained = False
 
-while True:
+while not item_already_obtained:
     line_of_materials = input().split()
     for i in range(0, len(line_of_materials), 2):
         quantity = int(line_of_materials[i])
@@ -11,18 +11,20 @@ while True:
         if material not in materials.keys():
             materials[material] = 0
         materials[material] += quantity
-        if materials['shards'] >= win_indicator or materials['fragments'] >= win_indicator or materials['motes'] >= win_indicator:
-            if materials['shards'] >= win_indicator:
-                obtained_item = 'Shadowmourne'
-            elif materials['fragments'] >= win_indicator:
-                obtained_item = 'Valanyr'
-            elif materials['motes'] >= win_indicator:
-                obtained_item = 'Dragonwrath'
-            materials[material] -= win_indicator
+        if materials['shards'] >= item_value:
+            obtained_item = 'Shadowmourne'
             item_already_obtained = True
+            materials[material] -= item_value
+        elif materials['fragments'] >= item_value:
+            obtained_item = 'Valanyr'
+            item_already_obtained = True
+            materials[material] -= item_value
+        elif materials['motes'] >= item_value:
+            obtained_item = 'Dragonwrath'
+            item_already_obtained = True
+            materials[material] -= item_value
+        if item_already_obtained:
             break
-    if item_already_obtained:
-        break
 
 print(f'{obtained_item} obtained!')
 for material, quantity in materials.items():
