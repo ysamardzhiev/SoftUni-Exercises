@@ -11,5 +11,4 @@ for index in range(len(explosion_string)):
         strength -= 1
     else:
         final_string += explosion_string[index]
-
 print(final_string)
