@@ -8,16 +8,11 @@ def check_if_valid(boss_and_title: str):
     return False
 
 
-def isolate_name(boss_and_title: str):
+def isolate_name_and_title(boss_and_title: str):
     name, title = boss_and_title.split(':')
-    match = re.findall(r"[A-Z]+", name)
-    return ''.join(match)
-
-
-def isolate_title(boss_and_title: str):
-    name, title = boss_and_title.split(':')
-    match = re.findall(r"[A-Za-z\s]+", title)
-    return ''.join(match)
+    match_name = re.findall(r"[A-Z]+", name)
+    match_title = re.findall(r"[A-Za-z\s]+", title)
+    return ''.join(match_name), ''.join(match_title)
 
 
 n = int(input())
@@ -25,8 +20,7 @@ n = int(input())
 for _ in range(n):
     boss = input()
     if check_if_valid(boss):
-        name = isolate_name(boss)
-        title = isolate_title(boss)
+        name, title = isolate_name_and_title(boss)
         print(f"{name}, The {title}")
         print(f">> Strength: {len(name)}")
         print(f">> Armor: {len(title)}")
