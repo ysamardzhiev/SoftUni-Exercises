@@ -12,8 +12,7 @@ def determine_group(current_barcode):
     match = re.findall(r"\d+", current_barcode)
     if match:
         return ''.join(match)
-    else:
-        return '00'
+    return '00'
 
 
 barcodes_count = int(input())
