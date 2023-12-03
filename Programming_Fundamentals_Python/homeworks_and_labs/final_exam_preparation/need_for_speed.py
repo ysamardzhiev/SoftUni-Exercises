@@ -22,12 +22,9 @@ while command != 'Stop':
             cars.pop(car)
     elif commands[0] == 'Refuel':
         car, fuel = commands[1], int(commands[2])
-        old_amount = cars[car][1]
-        cars[car][1] += fuel
-        if cars[car][1] > 75:
-            cars[car][1] = 75
-            fuel = 75 - old_amount
-        print(f"{car} refueled with {fuel} liters")
+        fuel_to_add = min(fuel, 75 - cars[car][1])
+        cars[car][1] += fuel_to_add
+        print(f"{car} refueled with {fuel_to_add} liters")
     else:
         car, kilometers = commands[1], int(commands[2])
         cars[car][0] -= kilometers
