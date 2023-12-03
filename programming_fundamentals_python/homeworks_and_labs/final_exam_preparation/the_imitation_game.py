@@ -11,7 +11,6 @@ while command != 'Decode':
         encrypted_message = encrypted_message[:index] + value + encrypted_message[index:]
     else:
         substring, replacement = instructions[1], instructions[2]
-        substrings_count = encrypted_message.count(substring)
-        encrypted_message = encrypted_message.replace(substring, replacement, substrings_count)
+        encrypted_message = encrypted_message.replace(substring, replacement)
     command = input()
 print(f"The decrypted message is: {encrypted_message}")
