@@ -33,6 +33,5 @@ while command != 'Done':
         for _ in range(count):
             cut_chars += string[start_index]
             start_index += 1
-        string = cut_chars
-        print(string)
+        print(cut_chars)
     command = input()
