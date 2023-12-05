@@ -1,9 +1,9 @@
 import re
 
 
-def check_validity(text):
+def check_validity(data: str):
     valid_pairs = []
-    matches = re.finditer(r"(@|#)([A-Za-z]{3,})\1{2}([A-Za-z]{3,})\1", text)
+    matches = re.finditer(r"(@|#)([A-Za-z]{3,})\1{2}([A-Za-z]{3,})\1", data)
     for word in matches:
         valid_pairs.append((word.group(2), word.group(3)))
     return valid_pairs
