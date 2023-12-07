@@ -6,12 +6,12 @@ while command != 'Travel':
     if commands[0] == 'Add Stop':
         index, string = int(commands[1]), commands[2]
         if 0 <= index < len(stops):
-            stops = stops[:index] + string + stops[index::]
+            stops = stops[:index] + string + stops[index:]
         print(stops)
     elif commands[0] == 'Remove Stop':
         start_index, end_index = int(commands[1]), int(commands[2])
         if 0 <= start_index < len(stops) and 0 <= end_index < len(stops):
-            stops = stops[:start_index] + stops[end_index + 1::]
+            stops = stops[:start_index] + stops[end_index + 1:]
         print(stops)
     elif commands[0] == 'Switch':
         old_string, new_string = commands[1], commands[2]
