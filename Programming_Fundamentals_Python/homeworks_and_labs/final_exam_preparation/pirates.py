@@ -33,10 +33,11 @@ while command != 'Sail':
 command = input()
 while command != 'End':
     commands = command.split('=>')
-    if commands[0] == 'Plunder':
+    event = commands[0]
+    if event == 'Plunder':
         town, people, gold = commands[1], int(commands[2]), int(commands[3])
         action_plunder(cities, town, people, gold)
-    elif commands[0] == 'Prosper':
+    elif event == 'Prosper':
         town, gold = commands[1], int(commands[2])
         action_prosper(cities, town, gold)
     command = input()
