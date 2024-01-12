@@ -1,3 +1,7 @@
-text = input().split()
+text = [char for char in input()]
 
-print(text[::-1])
+reversed_string = ''
+
+while text:
+    reversed_string += text.pop()
+print(reversed_string)
