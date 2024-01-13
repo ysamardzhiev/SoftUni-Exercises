@@ -1,6 +1,6 @@
 from collections import deque
 
-clients = deque([])
+clients = deque()
 
 command = input()
 while command != 'End':
