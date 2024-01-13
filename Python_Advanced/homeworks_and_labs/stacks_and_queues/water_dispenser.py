@@ -21,7 +21,7 @@ while command != 'End':
         else:
             print(f'{current_customer} must wait')
     else:
-        command, liters = command.split()
-        dispenser_capacity += int(liters)
+        _, liters_to_refill = command.split()
+        dispenser_capacity += int(liters_to_refill)
     command = input()
 print(f'{dispenser_capacity} liters left')
