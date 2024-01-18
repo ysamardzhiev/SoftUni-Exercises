@@ -1,8 +1,6 @@
-from collections import deque
-
 n = int(input())
 
-numbers = deque()
+numbers = []
 
 for _ in range(n):
     query = input().split()
@@ -18,6 +16,5 @@ for _ in range(n):
     elif command == '4':
         if numbers:
             print(min(numbers))
-numbers = [str(number) for number in numbers]
 numbers.reverse()
-print(', '.join(numbers))
+print(*numbers, sep=', ')
