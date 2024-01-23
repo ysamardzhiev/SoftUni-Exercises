@@ -12,6 +12,5 @@ while guest != 'END':
         guests.remove(guest)
     guest = input()
 
-formatted_set = sorted(guests, key=lambda x: x if x[0].isdigit else x)
 print(len(guests))
-print('\n'.join(formatted_set))
+print('\n'.join(sorted(guests)))
