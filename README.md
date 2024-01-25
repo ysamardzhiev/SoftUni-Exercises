@@ -8,3 +8,5 @@ In this repository, there are solutions to tasks from the programming courses of
 ➡ [Programming Basics with Python](https://github.com/ysamardzhiev/SoftUni-Exercises/tree/main/Programming_Basics_Python)
 
 ➡ [Programming Fundamentals with Python](https://github.com/ysamardzhiev/SoftUni-Exercises/tree/main/Programming_Fundamentals_Python)
+
+➡ [Python Advanced](https://github.com/ysamardzhiev/SoftUni-Exercises/tree/main/Python_Advanced)
