@@ -5,16 +5,12 @@ even_set = set()
 
 for row in range(1, n + 1):
     name = input()
-    ascii_sum = 0
-    for letter in name:
-        ascii_sum += ord(letter)
+    ascii_sum = sum(ord(letter) for letter in name) // row
 
-    final_result = ascii_sum // row
-
-    if final_result % 2:
-        odd_set.add(final_result)
+    if ascii_sum % 2:
+        odd_set.add(ascii_sum)
     else:
-        even_set.add(final_result)
+        even_set.add(ascii_sum)
 
 odd_numbers_sum = sum(odd_set)
 even_numbers_sum = sum(even_set)
