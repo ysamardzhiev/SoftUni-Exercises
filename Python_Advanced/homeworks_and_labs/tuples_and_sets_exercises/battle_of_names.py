@@ -10,6 +10,7 @@ for row in range(1, n + 1):
         ascii_sum += ord(letter)
 
     final_result = ascii_sum // row
+
     if final_result % 2:
         odd_set.add(final_result)
     else:
@@ -17,6 +18,7 @@ for row in range(1, n + 1):
 
 odd_numbers_sum = sum(odd_set)
 even_numbers_sum = sum(even_set)
+
 if odd_numbers_sum == even_numbers_sum:
     print(*odd_set.union(even_set), sep=', ')
 elif even_numbers_sum > odd_numbers_sum:
