@@ -6,8 +6,7 @@ symbols = deque(input().split())
 hive = deque()
 
 while bees and nectar:
-    bee_value = bees.popleft()
-    nectar_value = nectar.pop()
+    bee_value, nectar_value = bees.popleft(), nectar.pop()
     if nectar_value >= bee_value:
         symbol = symbols.popleft()
         if symbol == '/' and nectar_value == 0:
