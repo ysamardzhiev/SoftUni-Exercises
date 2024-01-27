@@ -3,6 +3,7 @@ from collections import deque
 bees = deque(int(num) for num in input().split())
 nectar = deque(int(num) for num in input().split())
 symbols = deque(input().split())
+
 total_honey = 0
 
 while bees and nectar:
