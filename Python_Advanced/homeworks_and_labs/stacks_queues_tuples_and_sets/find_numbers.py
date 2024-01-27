@@ -15,7 +15,7 @@ for _ in range(int(input())):
             number = int(numbers.pop())
             if second_command == 'First':
                 first_set.discard(number)
-            elif second_command == 'Second':
+            else:
                 second_set.discard(number)
     else:
         if first_set.issubset(second_set) or second_set.issubset(first_set):
