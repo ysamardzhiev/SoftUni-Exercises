@@ -18,9 +18,6 @@ for _ in range(int(input())):
             else:
                 second_set.discard(number)
     else:
-        if first_set.issubset(second_set) or second_set.issubset(first_set):
-            print('True')
-        else:
-            print('False')
+        print(first_set.issubset(second_set) or second_set.issubset(first_set))
 print(*sorted(first_set), sep=', ')
 print(*sorted(second_set), sep=', ')
