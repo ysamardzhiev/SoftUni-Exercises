@@ -9,12 +9,12 @@ crafted_presents = {}
 while materials and magic_levels:
     material_value, magic_level = materials.pop(), magic_levels.popleft()
 
-    if material_value == 0 and magic_level == 0:
+    if not material_value and not magic_level:
         continue
-    elif magic_level == 0:
+    elif not magic_level:
         materials.append(material_value)
         continue
-    elif material_value == 0:
+    elif not material_value:
         magic_levels.appendleft(magic_level)
         continue
 
