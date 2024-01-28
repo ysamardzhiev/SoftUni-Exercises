@@ -8,6 +8,7 @@ crafted_presents = {}
 
 while materials and magic_levels:
     material_value, magic_level = materials.pop(), magic_levels.popleft()
+
     if material_value == 0 and magic_level == 0:
         continue
     elif magic_level == 0:
@@ -16,27 +17,27 @@ while materials and magic_levels:
     elif material_value == 0:
         magic_levels.appendleft(magic_level)
         continue
+
     total_magic_level = material_value * magic_level
 
     if total_magic_level in presents.keys():
         toy = presents[total_magic_level]
-        if toy not in crafted_presents:
+        if toy not in crafted_presents.keys():
             crafted_presents[toy] = 0
         crafted_presents[toy] += 1
     elif total_magic_level < 0:
-        total_magic_level = material_value + magic_level
-        materials.append(total_magic_level)
+        materials.append(material_value + magic_level)
     elif total_magic_level > 0:
         materials.append(material_value + 15)
 
-if 'Doll' and 'Wooden train' in crafted_presents or 'Teddy bear' and 'Bicycle' in crafted_presents:
+if {'Doll', 'Wooden train'}.issubset(crafted_presents) or {'Teddy bear', 'Bicycle'}.issubset(crafted_presents):
     print("The presents are crafted! Merry Christmas!")
 else:
     print("No presents this Christmas!")
 
 if materials:
     print(f'Materials left: {", ".join(str(x) for x in materials[::-1])}')
-elif magic_levels:
+if magic_levels:
     print(f'Magic left: {", ".join(str(x) for x in magic_levels)}')
 
 for toy, amount in sorted(crafted_presents.items()):
