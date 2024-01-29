@@ -17,6 +17,7 @@ while color_substrings:
         for element in (first_substring[:-1], second_substring[:-1]):
             if element:
                 color_substrings.insert(len(color_substrings) // 2, element)
+
 for color in formed_colors:
     if color == 'orange' and not {'red', 'yellow'}.issubset(formed_colors):
         formed_colors.remove(color)
