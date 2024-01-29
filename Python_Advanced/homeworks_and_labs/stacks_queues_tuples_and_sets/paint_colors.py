@@ -6,22 +6,17 @@ searched_colors = ['red', 'yellow', 'blue', 'orange', 'purple', 'green']
 formed_colors = []
 
 while color_substrings:
-    if len(color_substrings) == 1:
-        color = color_substrings.pop()
+    first_substring = color_substrings.popleft()
+    second_substring = color_substrings.pop() if color_substrings else ''
+
+    for color in (first_substring + second_substring, second_substring + first_substring):
         if color in searched_colors:
             formed_colors.append(color)
+            break
     else:
-        first_substring, second_substring = color_substrings.popleft(), color_substrings.pop()
-
-        if first_substring + second_substring in searched_colors:
-            formed_colors.append(first_substring + second_substring)
-        elif second_substring + first_substring in searched_colors:
-            formed_colors.append(second_substring + first_substring)
-        else:
-            if len(first_substring) > 1:
-                color_substrings.insert(len(color_substrings) // 2, first_substring[:len(first_substring) - 1])
-            if len(second_substring) > 1:
-                color_substrings.insert(len(color_substrings) // 2, second_substring[:len(second_substring) - 1])
+        for element in (first_substring[:-1], second_substring[:-1]):
+            if element:
+                color_substrings.insert(len(color_substrings) // 2, element)
 for color in formed_colors:
     if color == 'orange' and not {'red', 'yellow'}.issubset(formed_colors):
         formed_colors.remove(color)
