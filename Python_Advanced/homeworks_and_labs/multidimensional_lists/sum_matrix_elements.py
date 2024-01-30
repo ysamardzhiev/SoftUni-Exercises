@@ -1,6 +1,6 @@
-matrix = []
 rows, columns = [int(x) for x in input().split(', ')]
 
+matrix = []
 total_sum = 0
 
 for i in range(rows):
