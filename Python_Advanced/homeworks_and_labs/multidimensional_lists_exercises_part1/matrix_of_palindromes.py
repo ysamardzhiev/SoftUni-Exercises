@@ -5,7 +5,6 @@ rows, cols = [int(x) for x in input().split()]
 alphabet = string.ascii_lowercase
 matrix = []
 
-
 for row_index in range(rows):
     matrix.append([])
     for col_index in range(cols):
