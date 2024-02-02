@@ -1,6 +1,6 @@
 rows, cols = [int(x) for x in input().split()]
 
-matrix = [[el for el in input().split()] for _ in range(rows)]
+matrix = [input().split() for _ in range(rows)]
 
 found_squares = 0
 
