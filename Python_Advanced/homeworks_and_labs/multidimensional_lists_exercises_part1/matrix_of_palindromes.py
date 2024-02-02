@@ -2,7 +2,7 @@ import string
 
 rows, cols = [int(x) for x in input().split()]
 
-alphabet = list(string.ascii_lowercase)
+alphabet = string.ascii_lowercase
 matrix = []
 
 
