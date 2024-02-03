@@ -37,11 +37,11 @@ while commands:
     if current_symbol == 'c':
         collected_coal += 1
         matrix[current_position[0]][current_position[1]] = '*'
+        if collected_coal == total_coal:
+            print(f'You collected all coal! {(current_position[0], current_position[1])}')
+            break
     elif current_symbol == 'e':
         print(f'Game over! {(current_position[0], current_position[1])}')
         exit()
-
-if collected_coal == total_coal:
-    print(f'You collected all coal! {(current_position[0], current_position[1])}')
 else:
     print(f'{total_coal - collected_coal} pieces of coal left. {(current_position[0], current_position[1])}')
