@@ -21,8 +21,8 @@ for row, col in bombs:
     if bomb <= 0:
         continue
 
-    for value in directions.values():
-        r, c = row + value[0], col + value[1]
+    for x, y in directions.values():
+        r, c = row + x, col + y
 
         if not (0 <= r < n and 0 <= c < n):
             continue
