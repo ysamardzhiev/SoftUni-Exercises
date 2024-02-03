@@ -12,6 +12,7 @@ collected_coal = 0
 for row_index in range(rows):
     row = input().split()
     matrix.append(row)
+
     if 's' in row:
         col_index = row.index('s')
         current_position = [row_index, col_index]
@@ -21,19 +22,17 @@ for row_index in range(rows):
 while commands:
     command = commands.popleft()
     row, col = current_position
-    current_symbol = ''
+
     if command == 'up' and row - 1 >= 0:
-        current_symbol = matrix[row - 1][col]
         current_position = [row - 1, col]
     elif command == 'down' and row + 1 < rows:
-        current_symbol = matrix[row + 1][col]
         current_position = [row + 1, col]
     elif command == 'left' and col - 1 >= 0:
-        current_symbol = matrix[row][col - 1]
         current_position = [row, col - 1]
     elif command == 'right' and col + 1 < rows:
-        current_symbol = matrix[row][col + 1]
         current_position = [row, col + 1]
+
+    current_symbol = matrix[current_position[0]][current_position[1]]
 
     if current_symbol == 'c':
         collected_coal += 1
@@ -41,6 +40,7 @@ while commands:
     elif current_symbol == 'e':
         print(f'Game over! {(current_position[0], current_position[1])}')
         exit()
+
 if collected_coal == total_coal:
     print(f'You collected all coal! {(current_position[0], current_position[1])}')
 else:
