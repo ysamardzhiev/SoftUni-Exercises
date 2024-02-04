@@ -44,5 +44,4 @@ while 0 <= row < size and 0 <= col < size:
     col += directions[command][1]
 else:
     print("Alice didn't make it to the tea party.")
-
 [print(*row) for row in matrix]
