@@ -1,8 +1,3 @@
-def check_if_move():
-    pass
-
-
-
 size = 5
 
 matrix = []
