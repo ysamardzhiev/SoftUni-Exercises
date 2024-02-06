@@ -1,17 +1,17 @@
 presents = int(input())
 size = int(input())
 
-neighborhood = []
+neighbourhood = []
 
 santa_pos = []
 nice_kids = 0
 
 for row in range(size):
-    neighborhood.append(input().split())
-    if 'S' in neighborhood[row]:
-        santa_pos = [row, neighborhood[row].index('S')]
-        neighborhood[santa_pos[0]][santa_pos[1]] = '-'
-    nice_kids += neighborhood[row].count('V')
+    neighbourhood.append(input().split())
+    if 'S' in neighbourhood[row]:
+        santa_pos = [row, neighbourhood[row].index('S')]
+        neighbourhood[santa_pos[0]][santa_pos[1]] = '-'
+    nice_kids += neighbourhood[row].count('V')
 
 directions = {
     'up': (-1, 0),
@@ -30,24 +30,24 @@ while command != "Christmas morning":
         command = input()
         continue
 
-    if neighborhood[r][c] == 'V':
+    if neighbourhood[r][c] == 'V':
         presents -= 1
         happy_nice_kids += 1
 
-    elif neighborhood[r][c] == 'C':
+    elif neighbourhood[r][c] == 'C':
         for direction in directions:
             row, col = r + directions[direction][0], c + directions[direction][1]
-            if neighborhood[row][col] != '-':  # if code doesnt return 100%
+            if neighbourhood[row][col] != '-':  # if code doesnt return 100%
                 presents -= 1
 
-                if neighborhood[row][col] == 'V':
+                if neighbourhood[row][col] == 'V':
                     happy_nice_kids += 1
-                neighborhood[row][col] = '-'
+                neighbourhood[row][col] = '-'
 
                 if not presents:
                     break
 
-    neighborhood[r][c] = '-'
+    neighbourhood[r][c] = '-'
     santa_pos = [r, c]
 
     if not presents:
@@ -55,12 +55,12 @@ while command != "Christmas morning":
 
     command = input()
 
-neighborhood[santa_pos[0]][santa_pos[1]] = 'S'
+neighbourhood[santa_pos[0]][santa_pos[1]] = 'S'
 
 if not presents and nice_kids - happy_nice_kids > 0:
     print("Santa ran out of presents!")
 
-[print(*row) for row in neighborhood]
+[print(*row) for row in neighbourhood]
 
 if nice_kids == happy_nice_kids:
     print(f'Good job, Santa! {happy_nice_kids} happy nice kid/s.')
