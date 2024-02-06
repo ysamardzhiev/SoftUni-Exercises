@@ -50,7 +50,7 @@ while command != "Christmas morning":
     neighbourhood[r][c] = '-'
     santa_pos = [r, c]
 
-    if not presents:
+    if not presents or nice_kids == happy_nice_kids:
         break
 
     command = input()
