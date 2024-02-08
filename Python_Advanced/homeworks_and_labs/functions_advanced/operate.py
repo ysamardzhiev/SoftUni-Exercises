@@ -2,14 +2,14 @@ from functools import reduce
 
 
 def operate(operator, *args):
-    if operator == '+':
-        return reduce(lambda x, y: x + y, args)
-    elif operator == '-':
-        return reduce(lambda x, y: x - y, args)
-    elif operator == '*':
-        return reduce(lambda x, y: x * y, args)
-    elif operator == '/':
-        return reduce(lambda x, y: x / y, args)
+    operations = {
+        '+': reduce(lambda x, y: x + y, args),
+        '-': reduce(lambda x, y: x - y, args),
+        '*': reduce(lambda x, y: x * y, args),
+        '/': reduce(lambda x, y: x / y, args)
+    }
+
+    return operations[operator]
 
 
 print(operate("+", 1, 2, 3))
