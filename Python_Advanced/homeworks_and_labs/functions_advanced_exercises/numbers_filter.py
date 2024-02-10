@@ -1,11 +1,10 @@
 def even_odd_filter(**kwargs):
     filtered_nums = {}
 
-    for numbers_type, numbers in kwargs.items():
-        if numbers_type == 'odd':
-            filtered_nums[numbers_type] = [num for num in numbers if num % 2]
-        elif numbers_type == 'even':
-            filtered_nums[numbers_type] = [num for num in numbers if num % 2 == 0]
+    if 'odd' in kwargs:
+        filtered_nums['odd'] = [num for num in kwargs['odd'] if num % 2]
+    if 'even' in kwargs:
+        filtered_nums['even'] = [num for num in kwargs['even'] if num % 2 == 0]
 
     return dict(sorted(filtered_nums.items(), key=lambda kvp: -len(kvp[1])))
 
