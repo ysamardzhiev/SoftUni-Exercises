@@ -3,9 +3,6 @@ def grocery_store(**products):
     return '\n'.join(f'{p}: {q}' for p, q in result)
 
 
-
-
-
 print(grocery_store(
     bread=5,
     pasta=12,
