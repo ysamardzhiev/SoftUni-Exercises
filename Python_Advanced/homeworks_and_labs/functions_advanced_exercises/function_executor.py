@@ -10,9 +10,7 @@ def func_executor(*tuples):
     result = ''
 
     for func, args in tuples:
-        func_name = func.__name__
-        func_result = func(*args)
-        result += f'{func_name} - {func_result}' + '\n'
+        result += f'{func.__name__} - {func(*args)}' + '\n'
 
     return result
 
