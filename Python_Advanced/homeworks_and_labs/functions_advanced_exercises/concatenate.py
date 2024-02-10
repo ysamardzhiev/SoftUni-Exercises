@@ -2,8 +2,7 @@ def concatenate(*args, **kwargs):
     result = ''.join(args)
 
     for key, string in kwargs.items():
-        if key in result:
-            result = result.replace(key, string)
+        result = result.replace(key, string)
 
     return ''.join(result)
 
