@@ -1,9 +1,9 @@
 from collections import deque
 
 
-def fill_the_box(*args):
+def fill_the_box(height, length, width, *args):
     elements = deque(args)
-    box_size = elements.popleft() * elements.popleft() * elements.popleft()
+    box_size = height * length * width
 
     total_cubes = 0
 
