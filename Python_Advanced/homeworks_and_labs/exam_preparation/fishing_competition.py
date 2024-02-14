@@ -5,7 +5,7 @@ fishing_area = []
 my_pos = []
 
 for row in range(size):
-    line = [el for el in input()]
+    line = list(input())
     fishing_area.append(line)
     if 'S' in line:
         col = line.index('S')
