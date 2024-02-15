@@ -16,9 +16,8 @@ def gather_credits(needed_credits, *courses):
     if gathered_credits >= needed_credits:
         return f"Enrollment finished! Maximum credits: {gathered_credits}.\n" \
                f"Courses: {', '.join(sorted(enrolled_courses))}"
-    else:
-        return f"You need to enroll in more courses! " \
-               f"You have to gather {needed_credits - gathered_credits} credits more."
+    return f"You need to enroll in more courses! " \
+           f"You have to gather {needed_credits - gathered_credits} credits more."
 
 
 print(gather_credits(
