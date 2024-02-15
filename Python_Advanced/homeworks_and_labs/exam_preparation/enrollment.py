@@ -4,13 +4,14 @@ def gather_credits(needed_credits, *courses):
 
     for course, credits in courses:
 
-        if needed_credits > gathered_credits:
-            if course in enrolled_courses:
-                continue
-            enrolled_courses.append(course)
-            gathered_credits += credits
-        else:
+        if needed_credits <= gathered_credits:
             break
+
+        if course in enrolled_courses:
+            continue
+
+        enrolled_courses.append(course)
+        gathered_credits += credits
 
     if gathered_credits >= needed_credits:
         return f"Enrollment finished! Maximum credits: {gathered_credits}.\n" \
