@@ -18,7 +18,6 @@ def cookbook(*args):
     return result
 
 
-
 print(cookbook(
     ("Spaghetti Bolognese", "Italian", ["spaghetti", "tomato sauce", "ground beef"]),
     ("Margherita Pizza", "Italian", ["pizza dough", "tomato sauce", "mozzarella"]),
