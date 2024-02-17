@@ -23,7 +23,6 @@ def accommodate_new_pets(capacity: int, max_weight: float, *pets):
     return result
 
 
-
 print(accommodate_new_pets(
     2,
     15.0,
