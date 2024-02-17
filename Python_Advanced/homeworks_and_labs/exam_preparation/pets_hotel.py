@@ -20,7 +20,7 @@ def accommodate_new_pets(capacity: int, max_weight: float, *pets):
     for pet, quantity in sorted(accommodated_pets.items()):
         result += f'{pet}: {quantity}\n'
 
-    return result[:-1]
+    return result
 
 
 
