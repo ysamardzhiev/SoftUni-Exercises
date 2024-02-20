@@ -4,7 +4,11 @@ class ValueCannotBeNegative(Exception):
 
 
 for _ in range(5):
-    number = int(input())
+    try:
+        number = int(input())
+    except ValueError:
+        print('Invalid input')
+        break
 
     if number < 0:
         raise ValueCannotBeNegative
