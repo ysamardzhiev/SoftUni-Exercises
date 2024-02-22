@@ -29,7 +29,7 @@ while command != 'End':
         raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
     elif email.count('@') > 1:
         raise SymbolRepetition("Email must contain only one @")
-    else:
-        print("Email is valid")
+
+    print("Email is valid")
 
     command = input()
