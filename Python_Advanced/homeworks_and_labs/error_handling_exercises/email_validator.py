@@ -10,17 +10,25 @@ class InvalidDomainError(Exception):
     pass
 
 
+class SymbolRepetition(Exception):
+    pass
+
+
+ALLOWED_DOMAINS = ('com', 'bg', 'org', 'net')
+MIN_NAME_LENGTH = 4
+
 command = input()
 while command != 'End':
-    try:
-        name, email = command.split('@')
-    except ValueError:
-        raise MustContainAtSymbolError("Email must contain @")
+    email = command
 
-    if len(name) <= 4:
+    if len(email.split('@')[0]) <= MIN_NAME_LENGTH:
         raise NameTooShortError("Name must be more than 4 characters")
-    elif not any(domain in email for domain in ['com', 'bg', 'org', 'net']):
+    elif '@' not in email:
+        raise MustContainAtSymbolError("Email must contain @")
+    elif not any(domain in email for domain in ALLOWED_DOMAINS):
         raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
+    elif email.count('@') > 1:
+        raise SymbolRepetition("Email must contain only one @")
     else:
         print("Email is valid")
 
