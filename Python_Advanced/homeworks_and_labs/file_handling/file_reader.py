@@ -7,3 +7,4 @@ for num in file:
     numbers_sum += int(num)
 
 print(numbers_sum)
+file.close()
