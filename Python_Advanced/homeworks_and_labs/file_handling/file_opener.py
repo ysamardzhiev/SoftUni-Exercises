@@ -1,6 +1,6 @@
 import os
 
-path = os.path.join('text.txt')
+path = os.path.join('files', 'text.txt')
 
 try:
     file = open(path)

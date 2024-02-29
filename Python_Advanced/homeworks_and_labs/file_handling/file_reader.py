@@ -1,6 +1,8 @@
-file_name = 'numbers.txt'
+import os
 
-file = open(file_name)
+path = os.path.join('files', 'numbers.txt')
+
+file = open(path)
 
 numbers_sum = 0
 for num in file:
