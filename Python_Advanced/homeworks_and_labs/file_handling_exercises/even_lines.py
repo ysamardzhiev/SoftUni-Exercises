@@ -1,6 +1,8 @@
-file_name = 'text.txt'
+import os
 
-with open(file_name, 'r') as file:
+path = os.path.join('files', 'text.txt')
+
+with open(path, 'r') as file:
     lines = file.readlines()
 
 swappable_symbols = ["-", ",", ".", "!", "?"]
