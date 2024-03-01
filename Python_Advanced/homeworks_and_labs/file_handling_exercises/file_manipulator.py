@@ -6,11 +6,11 @@ while command != 'End':
     path = os.path.join('files', file_name)
 
     if action == 'Create':
-        with open(path, 'w') as file:
-            file.write('')
+        with open(path, 'w'):
+            pass
     elif action == 'Add':
         with open(path, 'a') as file:
-            file.write(f"{' '.join(additional)}\n")
+            file.write(f"{additional[0]}\n")
     elif action == 'Replace':
         if os.path.exists(path):
             old_str, new_str = additional[0], additional[1]
