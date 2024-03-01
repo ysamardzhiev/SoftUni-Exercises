@@ -9,7 +9,7 @@ for file in os.listdir(path):
         for file_name in os.listdir(file):
             if os.path.isdir():
                 continue
-                
+
             name, extension = file_name.split('.')
             files.setdefault(extension, [])
             files[extension].append(name)
