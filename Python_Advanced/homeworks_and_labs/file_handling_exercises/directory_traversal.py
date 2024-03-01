@@ -23,6 +23,6 @@ for extension, file_names in sorted_files:
 
     with open(report_path, 'a') as file:
         file.write(f'.{extension}\n')
-        
+
         for file_name in sorted_names:
             file.write(f'- - - {file_name}.{extension}\n')
