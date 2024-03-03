@@ -7,7 +7,7 @@ files = {}
 for file in os.listdir(path):
     if os.path.isdir(file):
         for file_name in os.listdir(file):
-            if os.path.isdir():
+            if os.path.isdir(file_name):
                 continue
 
             name, extension = file_name.split('.')
