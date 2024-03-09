@@ -82,12 +82,12 @@ while True:
         matrix[row][column] = player
 
         if win_condition(player, row, column):
+            print(f'Player {player} has won the game!')
             break
 
         if is_board_full(turns):
             print('Board is full, no one wins.')
             exit()
-
     except FullColumnError:
         print('This column is full! Try with another one.')
         continue
@@ -100,5 +100,3 @@ while True:
 
     turns += 1
     print_board(matrix)
-
-print(f'Player {player} has won the game!')
