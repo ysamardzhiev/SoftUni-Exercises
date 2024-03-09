@@ -80,6 +80,7 @@ while True:
         validate_indexes(column)
         row = check_player_pos(column, matrix)
         matrix[row][column] = player
+        turns += 1
 
         if win_condition(player, row, column):
             print(f'Player {player} has won the game!')
@@ -98,5 +99,4 @@ while True:
         print(f'Invalid number! Please select a number between 1 and {COLS}!')
         continue
 
-    turns += 1
     print_board(matrix)
