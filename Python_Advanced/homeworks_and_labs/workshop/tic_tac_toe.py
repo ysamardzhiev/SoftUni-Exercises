@@ -72,10 +72,7 @@ def print_user_interface(first_player):
 
 
 def print_board(game_board):
-    for row in game_board:
-        print('|  ', end='')
-        print('  |  '.join(row), end='')
-        print('  |')
+    [print(f'|  {"  |  ".join(row)}  |') for row in game_board]
 
 
 def is_valid_number(player_choice):
