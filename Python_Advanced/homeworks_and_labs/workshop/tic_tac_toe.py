@@ -101,8 +101,16 @@ def is_board_full(turns_count):
     return BOARD_SIZE * BOARD_SIZE <= turns_count
 
 
+def is_name_valid(player1, player2):
+    return player1.lower() == player2.lower()
+
+
 player_one = input('Enter player 1 name: ')
 player_two = input('Enter player 2 name: ')
+
+if is_name_valid(player_one, player_two):
+    print('Names must not be identical!')
+    exit(0)
 
 board = [[' ' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 
