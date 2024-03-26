@@ -1,3 +1,8 @@
+import speech_recognition as sr
+
+from pyfiglet import Figlet
+
+
 class InvalidNumber(Exception):
     pass
 
@@ -102,13 +107,32 @@ def is_name_valid(player1, player2):
     return player1.lower() == player2.lower()
 
 
+def get_names(player_number):
+    while True:
+        with sr.Microphone() as source:
+            r = sr.Recognizer()
+            print(f'Player {player_number} please say your name: ')
+
+            audio = r.record(source, duration=3)
+            print('Recognizing...')
+
+            try:
+                return r.recognize_google(audio)
+            except sr.exceptions.UnknownValueError:
+                print("Didn't hear you well, please say your name again!")
+
+
+f = Figlet(font='slant')
+print(f.renderText('Tic Tac Toe'))
+
 while True:
-    player_one = input('Enter player 1 name: ')
-    player_two = input('Enter player 2 name: ')
+    player_one = get_names(1)
+    player_two = get_names(2)
 
     if is_name_valid(player_one, player_two):
         print('Names must not be identical! Please choose another name!')
         continue
+    print(f'{player_one} and {player_two} will face against each other!')
     break
 
 board = [[' ' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
